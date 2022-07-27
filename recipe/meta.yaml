@@ -17,11 +17,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >3.6
     - setuptools-scm
   run:
     - protobuf >=3.0.0
-    - python >=3.6
+    - python >3.6
     - six
 
 test:
