@@ -1,5 +1,5 @@
 {% set name = "ddsketch" %}
-{% set version = "2.0.2" %}
+{% set version = "2.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ddsketch-{{ version }}.tar.gz
-  sha256: 00c7f9d376c2abe8f9290d10cb3c712cd9effcdcd4477147553813ce54c97fee
+  sha256: 464469f53380aa878eb1dd4dc644086341e0d2a54b19dfca7d7a4645c8353ac6
 
 build:
   noarch: python
@@ -17,16 +17,20 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python >3.6
     - setuptools-scm
   run:
     - protobuf >=3.0.0
-    - python >=3.6
+    - python >3.6
     - six
 
 test:
   imports:
     - ddsketch
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: http://github.com/datadog/sketches-py
