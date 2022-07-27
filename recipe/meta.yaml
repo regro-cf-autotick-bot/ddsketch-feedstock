@@ -27,6 +27,10 @@ requirements:
 test:
   imports:
     - ddsketch
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: http://github.com/datadog/sketches-py
